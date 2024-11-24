@@ -92,7 +92,7 @@ Here, the user must simply input a number on:
 
 The following section presents some sample results from implementing the developed code. For instance:
 
-1: Setting ```Month = November```, ```Airport = BOS``` and ```R = 0.01``` results in **Figure 2** below. BOS experienced, on average, a higher [PM2.5] than the downtown area during November 2019, and in general, nvPM production / operations has been steadily going down. Meanwhile, there is no clear correlation between [PM2.5] and the nvPM produced at the airport.
+**1:** Setting ```Month = November```, ```Airport = BOS``` and ```R = 0.01``` results in **Figure 2** below. BOS experienced, on average, a higher [PM2.5] than the downtown area during November 2019, and in general, nvPM production / operations has been steadily going down. Meanwhile, there is no clear correlation between [PM2.5] and the nvPM produced at the airport.
 
 <p align="left">
 <img src="https://github.com/andyeske/Airports-PM/blob/main/Sample%20Figures/Boston%20Example.jpg" width="500"> 
@@ -100,12 +100,36 @@ The following section presents some sample results from implementing the develop
 **Figure 2:** _Boston Logan (BOS) nvPM and [PM2.5] values_.
 </p>
 
-2: Setting ```Month = January```, ```Airport = CLT``` and ```R = 0.01``` results in **Figure 3** below. CLT experienced, on average, a lower [PM2.5] than the downtown area during January 2019, and nvPM production / operations have oscillated with time. There is still no clear correlation between [PM2.5] and the nvPM produced at the airport.
+**2:** Setting ```Month = January```, ```Airport = CLT``` and ```R = 0.01``` results in **Figure 3** below. CLT experienced, on average, a lower [PM2.5] than the downtown area during January 2019, and nvPM production / operations have oscillated with time. There is still no clear correlation between [PM2.5] and the nvPM produced at the airport.
 
 <p align="left">
 <img src="https://github.com/andyeske/Airports-PM/blob/main/Sample%20Figures/Charlotte%20Example.jpg" width="500"> 
 
 **Figure 3:** _Charlotte Douglas (CLT) nvPM and [PM2.5] values_.
+</p>
+
+**3:** Setting ```Month = September```, ```Airport = PHL``` and ```R = 0.02``` results in **Figure 4** below. PHL experienced, on average, a higher [PM2.5] than the downtown area during September 2019, and nvPM production / operations have increased and decreased with time. Now, there is a much clearer agreement between [PM2.5] and the nvPM produced at the airport.
+
+<p align="left">
+<img src="https://github.com/andyeske/Airports-PM/blob/main/Sample%20Figures/Philadelphia%20Example.jpg" width="500"> 
+
+**Figure 4:** _Philadelphia International (PHL) nvPM and [PM2.5] values_.
+</p>
+
+**4:** Setting ```Month = August```, ```Airport = PHX``` and ```R = 0.02``` results in **Figure 5** below. PHX experienced, on average, a roughly comparable [PM2.5] to the downtown area during August 2019, while nvPM production / operations have steadily decreased with time. For PHX, there seems to be a very clear positive relationship between [PM2.5] and the nvPM produced at the airport.
+
+<p align="left">
+<img src="https://github.com/andyeske/Airports-PM/blob/main/Sample%20Figures/Philadelphia%20Example.jpg" width="500"> 
+
+**Figure 5:** _Phoenix Sky Harbor (PHX) nvPM and [PM2.5] values_.
+</p>
+
+**5:** Setting ```Month = March```, ```Airport = SFO``` and ```R = 0.01``` results in **Figure 6** below. SFO experienced, on average, a similar [PM2.5] to the downtown area during March 2019, and nvPM production / operations have seemed to have decreased with time. There is also a decent agreement between [PM2.5] and the nvPM produced at the airport.
+
+<p align="left">
+<img src="https://github.com/andyeske/Airports-PM/blob/main/Sample%20Figures/Philadelphia%20Example.jpg" width="500"> 
+
+**Figure 6:** _San Franciso International (SFO) nvPM and [PM2.5] values_.
 </p>
 
 ([ back to top ](#back_to_top))
