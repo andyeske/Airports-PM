@@ -119,7 +119,7 @@ The following section presents some sample results from implementing the develop
 **4:** Setting ```Month = August```, ```Airport = PHX``` and ```R = 0.02``` results in **Figure 5** below. PHX experienced, on average, a roughly comparable [PM2.5] to the downtown area during August 2019, while nvPM production / operations have steadily decreased with time. For PHX, there seems to be a very clear positive relationship between [PM2.5] and the nvPM produced at the airport.
 
 <p align="left">
-<img src="https://github.com/andyeske/Airports-PM/blob/main/Sample%20Figures/Philadelphia%20Example.jpg" width="500"> 
+<img src="https://github.com/andyeske/Airports-PM/blob/main/Sample%20Figures/Phoenix%20Example.jpg" width="500"> 
 
 **Figure 5:** _Phoenix Sky Harbor (PHX) nvPM and [PM2.5] values_.
 </p>
@@ -127,7 +127,7 @@ The following section presents some sample results from implementing the develop
 **5:** Setting ```Month = March```, ```Airport = SFO``` and ```R = 0.01``` results in **Figure 6** below. SFO experienced, on average, a similar [PM2.5] to the downtown area during March 2019, and nvPM production / operations have seemed to have decreased with time. There is also a decent agreement between [PM2.5] and the nvPM produced at the airport.
 
 <p align="left">
-<img src="https://github.com/andyeske/Airports-PM/blob/main/Sample%20Figures/Philadelphia%20Example.jpg" width="500"> 
+<img src="https://github.com/andyeske/Airports-PM/blob/main/Sample%20Figures/San%20Francisco%20Example.jpg" width="500"> 
 
 **Figure 6:** _San Franciso International (SFO) nvPM and [PM2.5] values_.
 </p>
