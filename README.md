@@ -1,7 +1,7 @@
 <a name="back_to_top"></a>
 # Visualizing and Quantifying Particulate Matter (PM) Production and Concentration Trends at 30 Major U.S. Airports
 
-In this repository, we provide an overview of the MATLAB code utilized to visualize and quantify trends in PM production and concentration at 30 Major U.S. airports, between 2009 and 2019.
+In this repository, we provide an overview of the MATLAB code utilized to visualize and quantify trends in both PM production and concentration levels at 30 Major U.S. airports, between 2009 and 2019.
 
 ## MATLAB Code
 
@@ -14,7 +14,14 @@ In this repository, we provide an overview of the MATLAB code utilized to visual
 <a name="overview"></a>
 ### 1: Code Overview & Inputs
 
-In the MATLAB Code folder of this repository, the user will find 
+## Data Sources
+
+The code developed for this work leveraged publicly available datasources from the U.S. Bureau of Transportation Statistics as well as the University of Washington in St. Louis Atmospheric Composition Analysis Group.
+
+## Functions
+
+In the MATLAB Code folder of this repository, the user will find three functions: ```Airport_PM```, ```Compute_PM```, and ```Compute_PM_conc```. Of these, only the first function will be described in detail, given that the latter two were utilized to compute the results conveniently stored in the _'Results.xlsx'_ spreadsheet, contained within the Excel Table folder. Should the user desire to ran additional case studies for other US airports or would like to examine PM2.5 data corresponding to 
+
 
 In order to run ```AllPathways_scrip```, besides downloading the above-listed functions
 
