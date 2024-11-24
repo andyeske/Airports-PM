@@ -23,7 +23,7 @@ The code developed for this work leveraged publicly available datasources from t
 
 ### Scripts
 
-In the [MATLAB Code](https://github.com/andyeske/Airports-PM/tree/main/MATLAB%20Code) folder of this repository, the user will find three scripts: ```Airport_PM```, ```Compute_PM```, and ```Compute_PM_conc```. Of these, only the first script will be described in detail, given that the latter two were utilized to compute the results conveniently stored in the _'Results.xlsx'_ spreadsheet, contained within the [Excel Table](https://github.com/andyeske/Airports-PM/tree/main/Data%20Tables) folder. Should the user desire to run additional case studies for other US airports or would like to examine PM2.5 data corresponding to other regions, it can do so using the these two scrips as well as the datasources above-mentioned.
+In the [MATLAB Code](https://github.com/andyeske/Airports-PM/tree/main/MATLAB%20Code) folder of this repository, the user will find three scripts: ```Airport_PM```, ```Compute_PM```, and ```Compute_PM_conc```. Of these, only the first script will be described in detail, given that the latter two were utilized to compute the results conveniently stored in the _'Results.xlsx'_ spreadsheet, contained within the [Data Tables](https://github.com/andyeske/Airports-PM/tree/main/Data%20Tables) folder. Should the user desire to run additional case studies for other US airports or would like to examine PM2.5 data corresponding to other regions, it can do so using the these two scrips as well as the datasources above-mentioned.
 
 In order to run ```Airport_PM```, the user must download the _'Results.xlsx'_ spreadsheet. Within ```Airport_PM```, the user will only need to focus on lines 1-43, which are copied below:
 
