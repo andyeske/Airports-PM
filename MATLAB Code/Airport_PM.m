@@ -1,5 +1,5 @@
 % -------------------------------------------- %
-% ---------------- Compute_PM ---------------- %
+% ---------------- Airport_PM ---------------- %
 % -------------------------------------------- %
 
 % The following script calculates the evolution of PM2.5 concentrations and
@@ -27,13 +27,17 @@ R = 0.01;
 
 % OUTPUTS:
 % Plot 1: bar chart displaying the PM2.5 concentrations (2019) at the 
-% chosen airport with its reference city location, for the chosen month and 
-% the 10-year (2009 - 2019) average for that month.
+% chosen airport with its reference city location for the chosen.
 
 % Plot 2: map displaying the locations of the chosen airport and the
 % reference city location.
 
-% Plot 3: scatter plot displaying the year-by-year relationship 
+% Plot 3: bar chart displaying the year-by-year evolution (2009 - 2019) of
+% the nvPM production at an airport and the total number of operations,
+% defined as the number of landings and take-offs the airport saw during
+% that period.
+
+% Plot 4: scatter plot displaying the year-by-year relationship 
 % (2009 - 2019) between PM2.5 concentrations at the airport and the 
 % absolute production quantities of nvPM due to aircraft landing and 
 % taking-off at that airport.
