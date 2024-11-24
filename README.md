@@ -14,7 +14,7 @@ In this repository, we provide an overview of the MATLAB code utilized to visual
 <a name="overview"></a>
 ### 1: Code Overview & Inputs
 
-## Data Sources
+#### Data Sources
 
 The code developed for this work leveraged publicly available datasources from the U.S. [Bureau of Transportation Statistics](https://www.transtats.bts.gov/) (BTS), the [International Civil Aviation Organization](https://www.easa.europa.eu/en/domains/environment/icao-aircraft-engine-emissions-databank) (ICAO) as well as the University of Washington in St. Louis' [Atmospheric Composition Analysis Group](https://sites.wustl.edu/acag/datasets/surface-pm2-5/) (ACAG). 
 * _From the BTS_: Extracted data from [Form 41 T-100 Segment](https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=GDM) for all flights (domestic and international) operated by U.S. airlines between 2009 and 2019. The data has been compiled and cleaned into an excel [datasheet](https://mitprod-my.sharepoint.com/:x:/g/personal/andyeske_mit_edu/EXCUoyS-hvFJkhy3sSUVcVMBTWTA0K3ABpiHsyl4SvChfw?e=xda3xC) which, for every flight, contains information about the specific aircraft as well as the total number of departures over the measured period.
