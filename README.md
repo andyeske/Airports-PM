@@ -7,12 +7,12 @@ In this repository, we provide an overview of the MATLAB code utilized to visual
 
 ### Table of Contents
 
-1: [ Data Sources & Functions ](#overview) <br />
+1: [ Data Sources & Scripts ](#overview) <br />
 2: [ Results ](#results) <br />
 
 ---
 <a name="overview"></a>
-### 1: Code Overview & Inputs
+### 1: Data Sources & Scripts
 
 ### Data Sources
 
@@ -88,9 +88,25 @@ Here, the user must simply input a number on:
 
 ---
 <a name="results"></a>
-### 2: Results: Biological (Crop) Feedstock Pathways
+### 2: Results
 
-The following section presents the plots corresponding
+The following section presents some sample results from implementing the developed code. For instance:
+
+1: Setting ```Month = November```, ```Airport = BOS``` and ```R = 0.01``` results in **Figure 2** below. BOS experienced, on average, a higher [PM2.5] than the downtown area during November 2019, and in general, nvPM production / operations has been steadily going down. Meanwhile, there is no clear correlation between [PM2.5] and the nvPM produced at the airport.
+
+<p align="left">
+<img src="https://github.com/andyeske/Airports-PM/blob/main/Sample%20Figures/Boston%20Example.jpg" width="500"> 
+
+**Figure 2:** _Boston Logan (BOS) nvPM and [PM2.5] values_.
+</p>
+
+2: Setting ```Month = January```, ```Airport = CLT``` and ```R = 0.01``` results in **Figure 3** below. CLT experienced, on average, a lower [PM2.5] than the downtown area during January 2019, and nvPM production / operations have oscillated with time. There is still no clear correlation between [PM2.5] and the nvPM produced at the airport.
+
+<p align="left">
+<img src="https://github.com/andyeske/Airports-PM/blob/main/Sample%20Figures/Charlotte%20Example.jpg" width="500"> 
+
+**Figure 3:** _Charlotte Douglas (CLT) nvPM and [PM2.5] values_.
+</p>
 
 ([ back to top ](#back_to_top))
 
