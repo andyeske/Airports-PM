@@ -12,14 +12,14 @@
 % Please select the desired month:
 % January | February | March     | April   | May      | June
 % July    | August   | September | October | November | December
-Month = 'January';
+Month = 'March';
 
 % Please select the desired airport:
 % ATL | BOS | CLT | ORD | MDW | DAL | DFW | DEN
 % DTW | FLL | IAH | HOU | LAS | LAX | MIA | MSP
 % JFK | LGA | EWR | OAK | MCO | PHL | PHX | PDX
 % SLC | SAN | SFO | SEA | IAD | DCA
-Airport = 'CLT';
+Airport = 'SFO';
 
 % Please select the desired circle radius resolution:
 % 0.01 | 0.02 (degrees, where 0.01 ~ 1 km)
@@ -124,18 +124,29 @@ t = tiledlayout(2,2);
 nexttile
 CityNames = categorical([Airport,City]);
 CityNames = reordercats(CityNames,[Airport,City]);
+Vals = [PM_conc2019_M(1,m),mean(PM_conc2019_M(1,:)),PM_conc2019_M(2,m),mean(PM_conc2019_M(2,:))];
 
-Colors = [0 0.4470 0.7410;0.8500 0.3250 0.0980];
-b = bar(CityNames,PM_conc2019_M(:,m),'facecolor', 'flat');
-for k = length(CityNames):-1:1
-    text(k,PM_conc2019_M(k,m)*1.1,[num2str(PM_conc2019_M(k,m)),'\mug/m^3'],'FontSize',12,'HorizontalAlignment','center');
+Colors = [0 0.4470 0.7410;0 0.4470 0.7410;0.8500 0.3250 0.0980;0.8500 0.3250 0.0980];
+alphas = [1;0.5;1;0.5];
+b = bar(diag(Vals,0),'stacked','facecolor', 'flat');
+set(gca, 'xticklabel', [])
+for k = 1:length(Vals)
+    text(k,Vals(k)*1.1,[num2str(Vals(k)),'\mug/m^3'],'FontSize',12,'HorizontalAlignment','center');
+    b(k).CData = Colors(k,:);
+    b(k).FaceAlpha = alphas(k);
 end
-b.CData = Colors(1:length(CityNames),:);
+
 % label and set axis limits
-xlabel("Cities");
-max_lim = max(PM_conc2019_M(:,m))*1.15;
+text(1.5,-0.3,CityNames(1),'FontSize',12,'HorizontalAlignment','center');
+text(3.5,-0.3,CityNames(2),'FontSize',12,'HorizontalAlignment','center');
+max_lim = max(Vals)*1.15;
 ylim([0 max_lim])
 ylabel("[PM_2_._5] (\mug/m^3)");
+str1 = [Airport,' - ', Month];
+str2 = [Airport,' - Average'];
+str3 = ['City - ',Month];
+str4 = ['City - Average'];
+legend(str1,str2,str3,str4,'Location','Southeast')
 title(['Airport and Reference City [PM_2_._5] - ',num2str(Month),' 2019 data']);
 set(gca,'FontSize',12)
 
@@ -167,9 +178,23 @@ set(gca,'FontSize',12)
 % Plot 3: Creating a bar chart showing the evolution of nvPM particle
 % production and aircraft operations overtime
 nexttile
+yyaxis left
 bar(2009:2019,(PM_M_month.*10^9)./ops_M_month)
 xlabel("Years");
-ylabel("nvPM Production / Aircraft Ops (\mug/operation)");
+ylb1 = ylabel("nvPM Production / Aircraft Ops (\mug/operation)");
+ax = gca;
+ax.YColor = 'k';
+
+yyaxis right
+plot(2009:2019,ops_M_month,'o-','LineWidth',1,'Color',[0,0,0])
+ylb2 = ylabel("Aircraft Ops");
+legend('nvPM/ops','Ops per year','Location','Southwest')
+set(get(gca,'YLabel'),'Rotation',270)
+ax = gca;
+ax.YColor = 'k';
+set(ylb1, 'Color', 'k');
+set(ylb2, 'Color', 'k');
+ax.YColor = 'k';
 title('Airport nvPM Emissions by Operation');
 set(gca,'FontSize',12)
 
