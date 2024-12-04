@@ -131,7 +131,7 @@ alphas = [1;0.5;1;0.5];
 b = bar(diag(Vals,0),'stacked','facecolor', 'flat');
 set(gca, 'xticklabel', [])
 for k = 1:length(Vals)
-    text(k,Vals(k)*1.1,[num2str(Vals(k)),'\mug/m^3'],'FontSize',12,'HorizontalAlignment','center');
+    text(k,Vals(k)*1.1,[num2str(round(Vals(k),2)),'\mug/m^3'],'FontSize',12,'HorizontalAlignment','center');
     b(k).CData = Colors(k,:);
     b(k).FaceAlpha = alphas(k);
 end
@@ -142,12 +142,12 @@ text(3.5,-0.3,CityNames(2),'FontSize',12,'HorizontalAlignment','center');
 max_lim = max(Vals)*1.15;
 ylim([0 max_lim])
 ylabel("[PM_2_._5] (\mug/m^3)");
-str1 = [Airport,' - ', Month];
-str2 = [Airport,' - Average'];
-str3 = ['City - ',Month];
-str4 = ['City - Average'];
+str1 = [Airport,' - ', Month,' (2019)'];
+str2 = [Airport,' - Average (2019)'];
+str3 = ['City - ',Month,' (2019)'];
+str4 = ['City - Average (2019)'];
 legend(str1,str2,str3,str4,'Location','Southeast')
-title(['Airport and Reference City [PM_2_._5] - ',num2str(Month),' 2019 data']);
+title({'Airport and Reference City [PM_2_._5]',[num2str(Month),' 2019 data']});
 set(gca,'FontSize',12)
 
 % Plot 2: Creating the map plot to visualize the city and airport location
@@ -172,51 +172,51 @@ end
 geobasemap(gx,'streets-dark')
 geolimits(gx,latlim,lonlim)
 gx.Layout.Tile = 2;
-title(['Airport and Reference City Location (R = ',num2str(R),'^o)']);
+title({'Airport and Reference City Location',['Radius = ',num2str(R),'^o']});
 set(gca,'FontSize',12)
 
 % Plot 3: Creating a bar chart showing the evolution of nvPM particle
 % production and aircraft operations overtime
 nexttile
 yyaxis left
-bar(2009:2019,(PM_M_month.*10^9)./ops_M_month)
+bar(2009:2019,(PM_M_month.*10^6)./ops_M_month)
 xlabel("Years");
-ylb1 = ylabel("nvPM Production / Aircraft Ops (\mug/operation)");
+ylb1 = ylabel("nvPM Production / Aircraft Ops (mg/operation)");
 ax = gca;
 ax.YColor = 'k';
 
 yyaxis right
 plot(2009:2019,ops_M_month,'o-','LineWidth',1,'Color',[0,0,0])
-ylb2 = ylabel("Aircraft Ops");
-legend('nvPM/ops','Ops per year','Location','Southwest')
+ylb2 = ylabel("Aircraft Monthly Ops");
+legend(['nvPM/ops - ',Month],['Ops - ',Month],'Location','Southwest')
 set(get(gca,'YLabel'),'Rotation',270)
 ax = gca;
 ax.YColor = 'k';
 set(ylb1, 'Color', 'k');
 set(ylb2, 'Color', 'k');
 ax.YColor = 'k';
-title('Airport nvPM Emissions by Operation');
+title({'Airport nvPM Emissions by Operation',[Month,' yearly data']});
 set(gca,'FontSize',12)
 
 % Plot 4: Creating a scatter plot showing the relationship between the
 % absolute production of nvPM and the [PM2.5] at the airport in question
 nexttile
-scatter((10^9).*PM_M_tot./ops_M_tot,PM_conc_M(1,:),100,'*','linewidth',1)
+scatter((10^6).*PM_M_tot./ops_M_tot,PM_conc_M(1,:),100,'*','linewidth',1)
 % Fitting a curve to the scatter points
-C = fit(((10^9).*PM_M_tot./ops_M_tot)',PM_conc_M(1,:)','poly1');
-Y = C.p1.*(10^9).*PM_M_tot./ops_M_tot + C.p2;
+C = fit(((10^6).*PM_M_tot./ops_M_tot)',PM_conc_M(1,:)','poly1');
+Y = C.p1.*(10^6).*PM_M_tot./ops_M_tot + C.p2;
 % Calculating the R2 of the fit
 SStot = sum((PM_conc_M(1,:)-mean(PM_conc_M(1,:))).^2); % Total Sum-Of-Squares
 SSres = sum((PM_conc_M(1,:)-Y).^2); % Residual Sum-Of-Squares
 Rsq = 1-SSres/SStot;   
 hold on
-plot((10^9).*PM_M_tot./ops_M_tot,Y,'LineWidth',1,'Color',[0 0 0])
-title('Airport nvPM Production and [PM_2_._5]')
-xlabel('nvPM Production / Aircraft Ops (\mug/operation)')
+plot((10^6).*PM_M_tot./ops_M_tot,Y,'LineWidth',1,'Color',[0 0 0])
+title({'Airport nvPM Production and [PM_2_._5]','Yearly average data'})
+xlabel('nvPM Production / Aircraft Ops (mg/operation)')
 ylabel('[PM_2_._5] (\mug/m^3)')
 legend('Data','Fit','Location','Northeast')
-str = {['R^2 = ',num2str(Rsq)],['y = (',num2str(C.p1),')*x + (',num2str(C.p2),')']};
-text(min((10^9).*PM_M_tot./ops_M_tot)*1.01,0.95*max(PM_conc_M(1,:)),str,'FontSize',12)
+str = {['R^2 = ',num2str(round(Rsq,2))],['y = (',num2str(round(C.p1,2)),')*x + (',num2str(round(C.p2,2)),')']};
+text(min((10^6).*PM_M_tot./ops_M_tot)*1.01,0.95*max(PM_conc_M(1,:)),str,'FontSize',12)
 set(gca,'FontSize',12)
 
 title(t,['Particulate Matter: ',Airport,' as a Case Study'],'FontSize',14,'FontWeight','bold')
