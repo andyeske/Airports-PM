@@ -1,7 +1,7 @@
 <a name="back_to_top"></a>
 # Visualizing and Quantifying Particulate Matter (PM) Production and Concentration Trends at 30 Major U.S. Airports
 
-In this repository, we provide an overview of the MATLAB code utilized to visualize and quantify trends in both PM production and concentration levels at 30 Major U.S. airports, between 2009 and 2019.
+In this repository, we provide an overview of the MATLAB code utilized to visualize and quantify trends in both PM production and concentration levels at 30 Major U.S. airports, between 2009 and 2019. For more details, please consult the write-up, titled "Visualizing and Quantifying PM".
 
 ## MATLAB Code
 
